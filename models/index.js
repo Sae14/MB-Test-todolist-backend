@@ -1,11 +1,6 @@
 const { Sequelize, DataTypes } = require("sequelize");
 
-MY_DB_NAME = process.env.DB_NAME;
-MY_DB_USERNAME = process.env.DB_USERNAME;
-MY_DB_PASSWORD = process.env.DB_PASSWORD;
-
-const sequelize = new Sequelize(MY_DB_NAME, MY_DB_USERNAME, MY_DB_PASSWORD, {
-  host: "localhost",
+const sequelize = new Sequelize(process.env.CLEARDB_DATABASE_URL, {
   dialect: "mysql",
   timezone: "+02:00",
 });
